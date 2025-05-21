@@ -1,0 +1,187 @@
+/* Estilos para hacer tu sitio responsive */
+@media (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        order: 1;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .hamburger-menu .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    .hamburger-menu.open .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger-menu.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links {
+        display: none; /* Ocultar por defecto en pantallas pequeñas */
+        flex-direction: column;
+        gap: 0.5rem; /* Reducir el espacio entre los enlaces del menú principal */
+        margin-top: 1rem;
+        /* width: 100%; Elimina esta línea para ajustar al contenido */
+        text-align: left; /* Cambia la alineación del texto a la izquierda */
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px; /* Ajustar según la altura del nav */
+        left: 0;
+        padding: 0.5rem; /* Reducir el padding general del menú principal */
+        border-radius: 5px; /* Opcional: añade un borde redondeado */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Opcional: añade una sombra */
+        z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+        white-space: nowrap; /* Evita que el texto largo se rompa */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar al activar la clase */
+    }
+
+    .nav-links li {
+        width: auto; /* Ajusta el ancho al contenido */
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem 1rem; /* Reducir el padding de los enlaces del menú principal */
+        font-size: 1rem; /* Reducir el tamaño de la fuente del menú principal */
+    }
+
+    .switch {
+        margin-left: 0;
+        margin-top: 0.5rem; /* Reducir el margen superior del switch */
+        order: 3;
+    }
+
+    .filter-dropdown {
+        position: relative; /* Cambiamos a relative para posicionar el desplegable */
+        order: 4;
+        margin-top: 0.5rem; /* Añadir un poco de espacio entre el switch y el filtro */
+    }
+
+    .filter-button {
+        display: block;
+        width: 100%;
+        text-align: left; /* Alinear el texto del botón a la izquierda */
+        margin-bottom: 0; /* Eliminar el margen inferior del botón */
+        font-size: 1rem; /* Reducir el tamaño de la fuente del botón */
+        padding: 0.5rem 1rem; /* Reducir el padding del botón */
+    }
+
+    .filter-button::after {
+        content: "▼";
+        margin-left: 0.5rem;
+        font-size: 0.8em;
+        vertical-align: middle;
+    }
+
+.filter-dropdown {
+    position: relative; /* contenedor del dropdown */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* justo debajo del botón o contenedor */
+    left: 0;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* asegurarse de que esté por encima */
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 0.9rem;
+}
+
+.dropdown-content.show {
+    display: flex;
+    flex-direction: column; /* para que los ítems se vean verticales */
+}
+
+    .dropdown-content a {
+        padding: 0.6rem 0.8rem; /* Reducir el padding de los enlaces del filtro */
+        text-decoration: none;
+        background-color: rgb(56, 2, 35);
+        display: block;
+        color: white;
+        transition: background-color 0.3s ease;
+        white-space: nowrap; /* Evitar el salto de línea en los enlaces */
+    }
+
+    #projects, #Cine {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #projects article, #Cine .pelicula {
+        width: 90%;
+        max-width: none;
+    }
+
+    aside {
+        position: static;
+        max-height: none;
+        margin-top: 2rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    footer .social-icons {
+        margin-top: 1rem;
+    }
+}
+
+/* Media query para anchos entre, por ejemplo, 769px y 992px */
+@media (max-width: 992px) and (min-width: 769px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .switch {
+        margin-left: 0.5rem;
+    }
+
+    .filter-button {
+        padding: 6px 15px;
+        font-size: 1rem;
+    }
+}

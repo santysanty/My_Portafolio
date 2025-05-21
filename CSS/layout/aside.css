@@ -1,0 +1,207 @@
+/* ---------------------------------------
+    ASIDE: Contenedor lateral de datos personales
+    (Se mantiene el tamaño compacto general)
+---------------------------------------- */
+aside {
+    width: 250px; /* Ancho fijo para el aside, puedes considerar un porcentaje para móvil */
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    top: 2rem;
+    max-height: 60vh; /* Altura máxima para evitar desbordamiento en general */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: linear-gradient(
+        135deg,
+        rgba(160, 108, 213, 0.5),
+        rgba(88, 144, 255, 0.5),
+        rgba(255, 0, 255, 0.5)
+    );
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    align-self: auto;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, cursor 0.3s ease;
+}
+
+aside:hover {
+    background-color: rgba(255, 0, 255, 0.4);
+    transform: translateY(-10px) scale(1.02);
+    cursor: pointer;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.5),
+        0 24px 60px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ---------------------------------------
+    ADVENTURE BOX: Bloque principal de "About Me"
+    (Se mantiene el tamaño compacto general)
+---------------------------------------- */
+.adventure-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    max-width: 1000px; /* Para pantallas grandes */
+    overflow: hidden; 
+    
+    margin-top: 1rem;
+    
+    border-radius: 10px;
+    color: #FFFFFF;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(
+        135deg,
+        rgba(160, 108, 213, 0.5),
+        rgba(88, 144, 255, 0.5),
+        rgba(255, 0, 255, 0.5)
+    );
+    padding: 15px 15px 10px 15px; /* Padding general, se ajustará en el media query */
+}
+
+/* ---------------------------------------
+    Imagen de perfil
+---------------------------------------- */
+.adventure-image {
+    background-image: url("../../IMG/ava.png"); /* Ajusta la ruta si es necesario */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100px; /* Altura de imagen general */
+    border-radius: 0;
+    margin-bottom: 10px;
+    border: none;
+}
+
+/* ---------------------------------------
+    ADVENTURE TEXT (Contenedor del texto "About Me")
+---------------------------------------- */
+.adventure-text {
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+/* Datos Personales */
+.personal-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.data-item strong,
+.data-item p {
+    flex: none;
+    margin: 0;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.data-item strong {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.data-item p {
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.3;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    color: #ffffff;
+}
+
+/* ---------------------------------------
+    MEDIA QUERIES para Responsividad
+---------------------------------------- */
+
+/* Pantallas medianas a grandes (desktop) - si ya tienes estos estilos, fusiona */
+@media (min-width: 768px) {
+    .adventure-box {
+        /* Puedes seguir con flex-direction: column o cambiar a row si prefieres la imagen al lado */
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 0; 
+        padding: 20px; /* Más padding en desktop */
+        max-width: 700px; /* Un ancho razonable para desktop */
+        margin-top: 2rem; /* Más margen arriba en desktop si es necesario */
+    }
+
+    .adventure-image {
+        width: 100%; /* Ocupa todo el ancho en desktop */
+        height: 120px; /* Un poco más de altura para la imagen en desktop */
+        margin-bottom: 15px;
+    }
+
+    .adventure-text {
+        text-align: center;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .data-item strong {
+        font-size: 1em;
+    }
+
+    .data-item p {
+        font-size: 0.95em;
+        line-height: 1.5;
+        padding: 0 20px; /* Más padding horizontal para texto en desktop */
+    }
+}
+
+/* === CAMBIO CLAVE: MEDIA QUERY para Pantallas Pequeñas (Móviles) === */
+@media (max-width: 600px) { /* Ajusta este breakpoint si tus móviles son más pequeños o grandes */
+    aside {
+        width: 90%; /* El aside puede ser más flexible en móviles */
+        margin: 20px auto; /* Reducir margen superior/inferior para más compacidad */
+        max-height: none; /* Dejar que el aside crezca un poco más en móviles, o pon un valor fijo si quieres scroll */
+        /* Si quieres que tenga scroll interno en móvil, mantén max-height: 60vh; o similar. */
+        /* Si quieres que se adapte al contenido y que el scroll sea el del navegador, quita max-height o pon none. */
+    }
+
+    .adventure-box {
+        padding: 10px 10px 5px 10px; /* **ACHICAR INFERIOR:** Menos padding general, y solo 5px abajo */
+        margin-top: 0.5rem; /* Menos margen superior para el cuadro "About Me" */
+    }
+
+    .adventure-image {
+        height: 80px; /* **ACHICAR:** Altura de la imagen aún más reducida */
+        margin-bottom: 8px; /* Menos espacio debajo de la imagen */
+    }
+
+    .data-item strong {
+        font-size: 0.85rem; /* **ACHICAR:** Título "About Me:" más pequeño */
+        margin-bottom: 3px; /* Menos espacio debajo del título */
+    }
+
+    .data-item p {
+        font-size: 0.75em; /* **ACHICAR:** Texto del párrafo aún más pequeño */
+        line-height: 1.2; /* **ACHICAR:** Interlineado muy compacto */
+        padding: 0 5px; /* **ACHICAR INFERIOR:** Muy poco padding horizontal para el texto */
+        margin-bottom: 0; /* Asegurar que no haya margen inferior extra en el párrafo */
+    }
+}

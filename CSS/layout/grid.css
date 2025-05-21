@@ -1,0 +1,17 @@
+/* Distribución principal usando Flexbox en el body (si aplica) */
+body {
+    /* ... otros estilos del body ... */
+    /* Si tu layout principal usa flex, descomenta y ajusta: */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem; */
+}
+
+.card-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}

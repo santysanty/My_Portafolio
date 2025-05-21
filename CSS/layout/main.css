@@ -1,0 +1,128 @@
+main {
+    padding-top: 6rem; /* Ajusta este valor a la altura de tu nav + el espacio deseado */
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espacio entre secciones */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    
+}
+
+main > section,
+main > aside {
+    margin-bottom: 1rem; /* Mantenemos un margen inferior para la separación */
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Para la sección de contacto */
+#contacto {
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+/* Para la sección de tecnologías */
+#technologies {
+    margin-bottom: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Para las secciones de proyectos y "Cine" */
+#projects,
+#Cine,
+#hability {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: none;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Estilos para ocultar y mostrar las secciones */
+main > section {
+    display: none; /* Ocultamos todas las secciones por defecto */
+}
+
+main > section#about, /* Mostramos la sección "about" por defecto */
+main > aside#about { /* Si "about" está dentro de un aside */
+    display: block;
+}
+
+main section[data-category] {
+    display: none;
+}
+
+main section[data-category].show {
+    display: block;
+}
+#countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    padding: 10px 0; /* Espaciado interno para que la línea no esté pegada al texto */
+    
+    /* === CAMBIO CLAVE AQUÍ: ELIMINAR O REDUCIR EL MARGEN SUPERIOR === */
+    margin: 0 auto; /* Elimina el margen superior (0) y centra horizontalmente (auto) */
+    /* Si necesitas que suba un poco más, puedes usar: margin-top: -10px; por ejemplo */
+
+    box-sizing: border-box;
+    color: #fff; /* Texto blanco */
+    font-size: 1.1em;
+    font-weight: bold;
+
+    border-bottom: 2px solid #fff; /* Línea blanca */
+    
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; 
+
+    writing-mode: horizontal-tb;
+    text-orientation: unset;
+}
+
+/* Los estilos para #countdown-text y #countdown permanecen igual */
+#countdown-text {
+    display: inline;
+    margin-right: 8px;
+    white-space: nowrap;
+    font-size: 1em;
+    font-weight: normal; 
+}
+
+#countdown {
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* === CONSIDERACIÓN ADICIONAL: ESTILOS DEL MAIN === */
+/* Asegúrate de que tu etiqueta <main> no tenga un `padding-top` que empuje el contenido. */
+/* Si tu main.css o global.css tiene algo como: */
+/*
+main {
+    padding-top: 60px; // Esto empujaría el contador hacia abajo
+}
+*/
+/* Si existe, puedes ajustarlo o sobrescribirlo para #countdown-container */
+/*
+main {
+    padding-top: 0; // O un valor menor si necesitas padding para otras secciones
+}
+*/
+/* O si solo necesitas que el contador no tenga ese padding: */
+/*
+main #countdown-container {
+    margin-top: -60px; // Si el padding del main es 60px
+}
+*/

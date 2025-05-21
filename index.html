@@ -2,212 +2,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio: Daniel Osvaldo Coria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="CSS/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    /* Estilo para ocultar secciones inicialmente */
-    .hidden {
-      display: none;
-    }
-    .card-container {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  </style>
+    <title>Portfolio: Daniel Osvaldo Coria</title>
+
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/layout/grid.css" />
+    <link rel="stylesheet" href="CSS/layout/main.css" />
+    <link rel="stylesheet" href="CSS/layout/aside.css" />
+
+    <link rel="stylesheet" href="CSS/components/nav.css" />
+    <link rel="stylesheet" href="CSS/components/footer.css" />
+    <link rel="stylesheet" href="CSS/components/proyect.css" />
+    <link rel="stylesheet" href="CSS/components/article.css" />
+    <link rel="stylesheet" href="CSS/components/form.css" />
+    <link rel="stylesheet" href="CSS/components/table.css" />
+    <link rel="stylesheet" href="CSS/components/pelicula.css" />
+    <link rel="stylesheet" href="CSS/components/carrusel.css" />
+    <link rel="stylesheet" href="CSS/components/Technologies.css" />
+    <link rel="stylesheet" href="css/card.css" />
+
+    <link rel="stylesheet" href="CSS/utils/colors.css" />
+    <link rel="stylesheet" href="CSS/utils/typography.css" />
+    <link rel="stylesheet" href="CSS/utils/spacing.css" />
+    <link rel="stylesheet" href="CSS/utils/helpers.css" />
+
+    <link rel="stylesheet" href="CSS/responsive.css" />
+    <link rel="stylesheet" href="CSS/dark-mode.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        /* Estilo para ocultar secciones inicialmente */
+        .hidden {
+            display: none;
+        }
+        .card-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    
-  </header>
+    <nav class="fuscia">
+        <div class="logo">
+            <img src="IMG/Logo.png" alt="IMG" class="logo">
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('about')">About Me</a></li>
+            <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="#" onclick="showSection('hability')">Hability</a></li>
+            <li><a href="#" onclick="showSection('Cine')">Series</a></li>
+            <li><a href="#" onclick="showSection('contacto')">Contact</a></li>
+        </ul>
 
-  <!-- Navegación -->
-  <nav class="fuscia">
-    <img src="IMG/Logo.png" alt="IMG" class="logo">
-    <ul class="nav-links">
-      <li><a href="#" onclick="showSection('about')">About Me</a></li>
-      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-      <li><a href="#" onclick="showSection('hability')">Hability</a></li>
-      <li><a href="#" onclick="showSection('Cine')">Series</a></li>
-      <li><a href="#" onclick="showSection('contacto')">Contact</a></li> <!-- corregido -->
-    </ul>
-  </nav>
+        <ul class="lista-probar">
+            <li class="filter-dropdown">
+                <button class="filter-button">Technologies</button>
+                <div class="dropdown-content">
+                    <div class="lista-probar">
+                        <a href="#" data-filter="all">All</a>
+                        <a href="#" data-filter="languages-prog">Languages (Prog)</a>
+                        <a href="#" data-filter="frameworks-libs">Frameworks/Libs</a>
+                        <a href="#" data-filter="design-tools">Design (Tools)</a>
+                        <a href="#" data-filter="data-bases">Data Bases</a>
+                        <a href="#" data-filter="soft-skills">Soft Skills</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <label class="switch">
+            <input type="checkbox" id="mode-switch">
+            <span class="slider"></span>
+        </label>
+    </nav>
 
-  <!-- Contenido principal -->
-  <div class="pag-content">
     <main>
+        <div id="countdown-container">
+            <span id="countdown-text">Time remaining: </span>
+            <span id="countdown"></span>
+        </div>
 
-      <!-- About Me -->
-      <div id="about">
-        <aside class="adventure-box">
-          <div class="adventure-image"></div>
-          <div class="adventure-text">
-            <div class="container personal-data">
-              <div class="data-item">
-                <strong>About Me:</strong>
-                <p>I am a developer in training, passionate about technology, web design, and creating innovative solutions. My mission is to grow professionally by contributing to impactful projects and positioning myself better in the job market.</p>
-              </div>
+        <aside id="about" class="adventure-box">
+            <div class="adventure-image"></div>
+            <div class="adventure-text">
+                <div class="container personal-data">
+                    <div class="data-item">
+                        <strong>About Me:</strong>
+                        <p>
+                            I am a developer in training, passionate about technology and web design.
+                            I enjoy creating innovative solutions and contributing to impactful projects.
+                            My mission is to grow professionally and position myself strongly in the job market.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </aside>
 
-      </div>
+        <section id="projects">
+            <article class="fuscia">
+                <img src="IMG/e-commerce.jpg" alt="E-Commerce Project" width="100%">
+                <h3>E-Commerce and Product Tracking System</h3>
+                <p>This project involves the development of a complete e-commerce platform that includes user authentication, product catalog management, shopping cart, and online payments. Additionally, it integrates a product tracking system that allows users and administrators to monitor the shipment and delivery status in real time.</p>
+            </article>
 
-      <!-- Projects -->
-      <section id="projects" class="card-container hidden">
-        <article class="fuscia">
-          <img src="IMG/e-commerce.jpg" alt="E-Commerce Project" width="100%">
-          <h3>E-Commerce and Product Tracking System</h3>
-          <p>This project involves the development of a complete e-commerce platform that includes user authentication, product catalog management, shopping cart, and online payments. Additionally, it integrates a product tracking system that allows users and administrators to monitor the shipment and delivery status in real time.</p>
-        </article>
-      
-        <article class="fuscia">
-          <img src="IMG/ganaderia.webp" alt="Livestock Monitoring Project" width="100%">
-          <h3>Livestock Automation System</h3>
-          <p>This system automates feeding, weighs, and monitors calves' health, using sensors to provide real-time data, improving farm management and productivity.</p>
-        </article>
-      
-        <article class="fuscia">
-          <img src="IMG/transportation.jpg" alt="Traffic Flow Project" width="100%">
-          <h3>Urban Traffic Flow Analysis and Optimization</h3>
-          <p>This project focuses on measuring vehicle flow across city routes using IoT sensors and data analytics. The goal is to detect traffic congestion in real time and suggest alternative routes to increase traffic speed and reduce delays. The system aims to support smart city development and improve urban mobility.</p>
+            <article class="fuscia">
+                <img src="IMG/ganaderia.webp" alt="Livestock Monitoring Project" width="100%">
+                <h3>Livestock Automation System</h3>
+                <p>This system automates feeding, weighs, and monitors calves' health, using sensors to provide real-time data, improving farm management and productivity.</p>
+            </article>
 
-        </article>
-      </section>
+            <article class="fuscia">
+                <img src="IMG/transportation.jpg" alt="Traffic Flow Project" width="100%">
+                <h3>Urban Traffic Flow Analysis and Optimization</h3>
+                <p>This project focuses on measuring vehicle flow across city routes using IoT sensors and data analytics. The goal is to detect traffic congestion in real time and suggest alternative routes to increase traffic speed and reduce delays. The system aims to support smart city development and improve urban mobility.</p>
+            </article>
+        </section>
 
-      <section  id="hability" class="fusciasdsd">
+        <section id="hability" class="fusciasdsd">
+            <div class="carousel-container">
+                <div class="table-container" id="table-container">
+                    </div>
+                <div class="table-buttons" id="table-buttons-container">
+                    </div>
+            </div>
+        </section>
 
-       
-        <table class="tabla-personal">
-          <tr>
-            <th>Technologies I Master</th>
-            <th>Technologies I Want to Learn</th>
-            <th>Hobbies</th>
-          </tr>
-          <tr>
-            <td>C/C++</td>
-            <td>Mainframe Programming</td>
-            <td>Online Gaming</td>
-          </tr>
-          <tr>
-            <td>Java</td>
-            <td>Server Management</td>
-            <td>Operating System Testing</td>
-          </tr>
-          <tr>
-            <td>C#</td>
-            <td>Expert Systems</td>
-            <td>Exploring Emerging Apps</td>
-          </tr>
-          <tr>
-            <td>Node.js</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>QT Framework</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-      </section>
-      <section id="contacto">
-        <h2>Contact Form</h2>
-        <form class="formulario-contacto">
-          <label for="nombre">First Name</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Enter your first name" required>
-      
-          <label for="apellido">Last Name</label>
-          <input type="text" id="apellido" name="apellido" placeholder="Enter your last name" required>
-      
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-      
-          <label for="telefono">Phone</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234 5678" required>
-      
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
-      
-      <section id="Cine" style="display: none;">
-        <div class="pelicula">
-          <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" alt="Interstellar Poster" style="width: 100%; border-radius: 10px;">
-          <h3>Interstellar</h3>
-          <p>A cosmic odyssey that blends real science, love, and philosophy. Visually stunning and emotionally deep.</p>
-        </div>
-      
-        <div class="pelicula">
-          <img src="IMG/CLUBPELEA.webp" alt="Club de Pelea">
-          <h3>Fight Club</h3>
-          <p>A critique of consumer society, with a brilliant script and an unforgettable final twist.</p>
-        </div>
-      
-        <div class="pelicula">
-          <img src="IMG/Matrix.webp" alt="Matrix">
-          <h3>The Matrix</h3>
-          <p>Revolutionized science fiction cinema with its concept of simulated reality and iconic effects.</p>
-        </div>
-      </section>
-      
-     
+        <section id="contacto">
+            <h2>Contact Form</h2>
+            <form class="formulario-contacto">
+                <label for="nombre">First Name</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Enter your first name" required>
+
+                <label for="apellido">Last Name</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Enter your last name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+                <label for="telefono">Phone</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234 5678" required>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="Cine" style="display: none;">
+            <div class="pelicula">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" alt="Interstellar Poster" style="width: 100%; border-radius: 10px;">
+                <h3>Interstellar</h3>
+                <div class="descripcion-contenedor oculto">
+                    <p>
+                        A cosmic odyssey that blends real science, love, and philosophy. Visually stunning and emotionally deep.
+                    </p>
+                    <p>
+                        Directed by Christopher Nolan, it explores time dilation, the survival of humanity, and powerful emotional bonds across dimensions.
+                    </p>
+                </div>
+                <button class="btn-ver-mas toggle-descripcion">Ver más</button>
+            </div>
+
+            <div class="pelicula">
+                <img src="IMG/CLUBPELEA.webp" alt="Club de Pelea">
+                <h3>Fight Club</h3>
+                <div class="descripcion-contenedor oculto">
+                    <p>
+                        A critique of consumer society, with a brilliant script and an unforgettable final twist.
+                    </p>
+                    <p>
+                        Based on Chuck Palahniuk's novel, it delves into identity, mental health, and rebellion through powerful visual storytelling.
+                    </p>
+                </div>
+                <button class="btn-ver-mas toggle-descripcion">Ver más</button>
+            </div>
+
+            <div class="pelicula">
+                <img src="IMG/Matrix.webp" alt="Matrix">
+                <h3>The Matrix</h3>
+                <div class="descripcion-contenedor oculto">
+                    <p>
+                        Revolutionized science fiction cinema with its concept of simulated reality and iconic effects.
+                    </p>
+                    <p>
+                        Featuring groundbreaking action scenes and philosophical themes, the film questions the nature of reality and human freedom.
+                    </p>
+                </div>
+                <button class="btn-ver-mas toggle-descripcion">Ver más</button>
+            </div>
+        </section>
+
+        <section id="technologies">
+            <div class="technology-card" data-technology="data-bases">
+                <h3 class="technology-title">Databases</h3>
+                <p class="technology-category">Junior</p>
+                <div class="demand-timeline">
+                    <div class="demand-bar high-demand" style="width: 80%;"></div>
+                    <span class="demand-icon high-demand-icon"></span>
+                </div>
+                <ul class="technology-list">
+                    <li>
+                        <span class="technology-name">MySQL:</span> Experienced in relational database design and management.
+                        <span class="demand-icon high-demand-icon" title="High Market Demand"></span>
+                        <span class="growth-icon" title="Good Growth Potential"></span>
+                    </li>
+                    <li>
+                        <span class="technology-name">PostgreSQL:</span> Knowledgeable in advanced querying and data integrity.
+                        <span class="demand-icon medium-demand-icon" title="Medium Market Demand"></span>
+                        <span class="stable-icon" title="Stable Market"></span>
+                    </li>
+                </ul>
+                <div class="technology-details">
+                    <div class="info-item">
+                        <span class="info-label">Salary:</span>
+                        <span class="info-value salary">~ $135,000/year</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Open Source:</span>
+                        <span class="info-value open-source">Yes</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Community:</span>
+                        <span class="info-value community">Large and active</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Used by:</span>
+                        <span class="info-value companies">Netflix, Spotify, GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-  </div>
 
-  <!-- Footer -->
-  <footer class="fuscia">
-    <p>Connect with me:</p>
-    <div class="social-icons">
-      <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="#" title="AI Projects"><i class="fas fa-robot"></i></a>
-    </div>
-  </footer>
+    <footer class="fuscia">
+        <div id="visit-counter" class="visit-counter">
+            Page visits: <span id="visit-count"></span>
+        </div>
+        <p>Connect with me:</p>
+        <div class="social-icons">
+            <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="AI Projects"><i class="fas fa-robot"></i></a>
+        </div>
+    </footer>
 
-  <!-- Script para mostrar/ocultar secciones -->
-  <script>
-    function showSection(id) {
-      const about = document.getElementById('about');
-      const projects = document.getElementById('projects');
-      const hability = document.getElementById('hability');
-      const cine = document.getElementById('Cine');
-      const contacto = document.getElementById('contacto');
-  
-      // Oculta todas las secciones
-      about.style.display = 'none';
-      projects.style.display = 'none';
-      hability.style.display = 'none';
-      cine.style.display = 'none';
-      contacto.style.display = 'none';
-  
-      // Muestra solo la sección seleccionada
-      if (id === 'about') {
-        about.style.display = 'block';
-      } else if (id === 'projects') {
-        projects.style.display = 'flex';
-      } else if (id === 'hability') {
-        hability.style.display = 'flex';
-      } else if (id === 'Cine') {
-         cine.style.display = 'flex';
-       } 
-      else if (id === 'contacto') {
-        contacto.style.display = 'block';
-      }
-    }
-  
-    // Inicialmente solo se muestra "about"
-    showSection('about');
-  </script>
-  
-  
+    <script>
+        // Esta función showSection la he movido a main.js para centralizar la lógica JS.
+        // Si aún la necesitas aquí por alguna razón específica, puedes mantenerla,
+        // pero lo ideal es que el JS esté en archivos externos.
+        function showSection(id) {
+            const mainSections = document.querySelectorAll('main > section, main > aside');
+            mainSections.forEach(section => {
+                section.style.display = 'none';
+            });
 
-</body>
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                // Aquí, 'block' o 'flex' dependerá de cómo quieres que se muestre cada sección.
+                // Es mejor que el CSS maneje el display por defecto para la sección activa.
+                // Por ejemplo, si tienes un display: flex; en #projects en tu CSS, solo con quitar hidden es suficiente.
+                // Para mantener la lógica que tenías, la dejo así:
+                if (id === 'projects' || id === 'hability' || id === 'Cine' || id === 'technologies') {
+                    targetSection.style.display = 'flex';
+                } else {
+                    targetSection.style.display = 'block';
+                }
+            }
+        }
+    </script>
+    <script src="JS/formValidation.js"></script>
+    <script src="JS/modo.js"></script>
+    <script src="JS/toggle-content.js"></script>
+    <script src="JS/countdown-timer.js"></script>
+    <script src="JS/visit-counter.js"></script>
+    <script src="JS/content-dinamic.js"></script>
+    <script src="JS/filter.js"></script>
+    <script src="JS/menu.js"></script> <script src="JS/main.js"></script> </body>
 </html>

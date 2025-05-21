@@ -1,0 +1,38 @@
+/* Estilos para la sección de proyectos */
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    width: 90%;
+    max-width: 1200px;
+    /* Aseguramos que el fondo sea transparente */
+    box-sizing: border-box;
+}
+
+article {
+    width: 240px;
+    height: 420px;
+    /* Aseguramos que las cards sean transparentes si el fondo de la sección es el que quieres */
+    background-color: transparent; /* Si deseas que las cards tengan un fondo, reemplaza 'transparent' con el color deseado */
+    border: 8px solid #FF00FF;
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem 1rem 2.5rem;
+    gap: 0.1rem;
+    overflow: hidden;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    margin: 1rem;
+    border-radius: 1rem;
+    max-width: 360px;
+    box-sizing: border-box;
+}
+
+/* ... el resto de tus estilos para article ... */
