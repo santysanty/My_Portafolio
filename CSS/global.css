@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #4212ee; /* Default light mode background */
+    color: #000000; /* Default light mode text color */
+   background-image: url("/IMG/fondo.jpg");
+   
+}
+.tabla,
+.cards {
+  flex: 1; /* O establecer un ancho fijo si lo preferís */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    /* ... otros estilos generales de encabezados ... */
+}
+
+a {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00509e;
+}
+
+/* === UTILITARIOS Y CONTENEDORES === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important; /* Asegura la prioridad */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,72 @@
+/* === Modo oscuro === */
+.modo-oscuro {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.modo-oscuro nav {
+    background: #1f1f1f;
+    color: #f5f5f5;
+}
+
+.modo-oscuro a {
+    color: #90caf9;
+}
+
+.modo-oscuro a:hover {
+    color: #64b5f6;
+}
+
+.modo-oscuro button {
+    background-color: #333;
+    color: white;
+}
+
+.modo-oscuro h2 {
+    color: #ffffff;
+}
+
+.modo-oscuro .card-container,
+.modo-oscuro .azul-marino,
+.modo-oscuro .celeste {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Estilo para la navegación en modo oscuro */
+body.modo-oscuro nav {
+    background-color: #1e1e1e !important;
+    color: #f5f5f5 !important;
+}
+
+/* Estilo para el footer en modo oscuro - ANULANDO el background-image */
+body.modo-oscuro footer.fuscia {
+    background-color: #1e1e1e !important;
+    background-image: none !important; /* Añadimos esto para eliminar el degradado */
+    color: #f5f5f5 !important;
+    border-top-color: #444 !important;
+}
+
+body.modo-oscuro footer.fuscia p {
+    color: #ccc !important;
+}
+
+body.modo-oscuro footer.fuscia .social-icons i {
+    color: #f5f5f5 !important;
+}
+
+/* Estilos para el contador en modo oscuro - ANULANDO la clase fuscia también */
+body.modo-oscuro .visit-counter.fuscia {
+    background-color: #343a40 !important;
+    color: #fff !important;
+}
+
+/* Botón en modo oscuro: fondo nav oscuro */
+.modo-oscuro .filter-button {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+/* Menú desplegable en modo oscuro */
+.modo-oscuro .dropdown-content {
+    background-color: rgba(31, 31, 31, 0.95);
+}

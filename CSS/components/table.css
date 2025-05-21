@@ -1,0 +1,195 @@
+/* ... (Tu CSS existente para ASIDE, ADVENTURE BOX, Imagen, Texto, Datos Personales - Mantén esto tal cual) ... */
+
+/* ---------------------------------------
+    TABLES: Contenedor de la tabla (Hability/Projects)
+---------------------------------------- */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+}
+
+/* Ocultar la barra de desplazamiento (para WebKit browsers como Chrome, Safari) */
+.table-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ocultar la barra de desplazamiento para Firefox */
+.table-container {
+    scrollbar-width: none;
+}
+
+/* Tabla básica */
+.table-container table {
+    width: 100%;
+    min-width: 600px; /* Mantenemos un ancho mínimo para que haya contenido desplazable */
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 0.95rem;
+    background-color: rgba(0, 0, 0, 0.726);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Encabezados */
+.table-container th {
+    background-color: #6b4ca0;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Celdas */
+.table-container td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+
+/* ---------------------------------------
+    TABLE BUTTONS: Contenedor de botones (Siguiente/Anterior)
+    (Optimizado para centrar y mejorar el diseño)
+---------------------------------------- */
+.table-buttons {
+    display: flex;
+    justify-content: center; /* Centra los elementos hijos (botones) horizontalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente (si tienen alturas diferentes) */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si hay muchos o el espacio es limitado */
+    gap: 1.5rem; /* Espacio entre los botones para una mejor separación en pantallas grandes */
+    margin-top: 2rem; /* Más margen superior para separarlos claramente de la tabla */
+    margin-bottom: 1.5rem; /* Margen inferior para separarlos del contenido siguiente */
+    width: 100%; /* Asegura que el contenedor de botones ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho total */
+    padding: 0 1rem; /* Pequeño padding horizontal para que los botones no toquen los bordes de la pantalla */
+}
+
+/* Botones individuales (diseño base) */
+.table-buttons button { /* Apunta directamente a los <button> dentro de .table-buttons */
+    padding: 0.8rem 1.8rem; /* Padding generoso para un mejor tamaño y área de clic */
+    font-size: 1rem; /* Tamaño de fuente legible y profesional */
+    border: none;
+    border-radius: 8px; /* Bordes un poco más redondeados para un aspecto moderno */
+    background-color: #6b4ca0; /* Color principal */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    min-width: 120px; /* Asegura un ancho mínimo consistente para los botones */
+    text-transform: uppercase; /* Opcional: poner el texto en mayúsculas */
+    font-weight: 600; /* Opcional: un poco más de grosor en la fuente */
+    letter-spacing: 0.05em; /* Opcional: espaciado entre letras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sutil sombra para dar profundidad */
+}
+
+.table-buttons button:hover {
+    background-color: #8f6dd9; /* Color de hover */
+    transform: translateY(-3px); /* Efecto de elevación más pronunciado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más grande en hover */
+}
+
+.table-buttons button:active {
+    transform: translateY(0); /* Efecto de "presión" al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para botones deshabilitados */
+.table-buttons button:disabled,
+.table-buttons button.disabled-button { /* Se aplica cuando el botón está deshabilitado o tiene la clase disabled-button */
+    background-color: #555; /* Color más oscuro para indicar que está deshabilitado */
+    cursor: not-allowed; /* Cursor de "no permitido" */
+    opacity: 0.6; /* Un poco de transparencia */
+    transform: none; /* Eliminar cualquier transformación al pasar el ratón */
+    box-shadow: none; /* Eliminar sombra */
+}
+
+/* ---------------------------------------
+    MEDIA QUERIES para Responsividad
+---------------------------------------- */
+
+/* Pantallas medianas a grandes (desktop) */
+@media (min-width: 769px) {
+    /* ... (Estilos de desktop para aside, adventure-box, imagen, texto, etc. - Mantenlos tal cual) ... */
+
+    /* TABLE CONTAINER (Desktop) */
+    .table-container {
+        margin: 2rem 0;
+        padding-bottom: 1.5rem;
+    }
+
+    .table-container table {
+        min-width: unset;
+        font-size: 0.95rem;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 0.75rem 1rem;
+    }
+
+    /* TABLE BUTTONS (Desktop) */
+    .table-buttons {
+        gap: 2rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .table-buttons button {
+        font-size: 1.05rem;
+        padding: 0.9rem 2rem;
+    }
+}
+
+
+/* === MEDIA QUERY para Pantallas Pequeñas (Móviles) === */
+@media (max-width: 768px) {
+    /* ... (Estilos móviles para aside, adventure-box, imagen, texto, datos personales, tabla - Mantenlos tal cual) ... */
+
+    /* TABLE CONTAINER (Móvil) */
+    .table-container {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        margin: 0.8rem auto;
+        padding-bottom: 0.2rem;
+        width: 98%;
+    }
+
+    .table-container table {
+        min-width: 450px;
+        font-size: 0.8rem;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 0.4rem 0.6rem;
+        white-space: nowrap;
+    }
+
+    /* Para celdas con texto largo que NECESITAN envolverse (ej. "Description") */
+    .table-container td.description-column {
+        white-space: normal;
+        width: 130px;
+    }
+
+    /* TABLE BUTTONS (Móvil) - Diseño mejorado y centrado */
+    .table-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+        margin-bottom: 0.8rem;
+        padding: 0 0.5rem;
+    }
+
+    .table-buttons button {
+        font-size: 0.78rem;
+        padding: 0.6rem 1.2rem;
+        min-width: unset;
+        width: auto;
+        max-width: 140px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}

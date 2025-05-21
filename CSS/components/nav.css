@@ -1,0 +1,333 @@
+/* === Navegación === */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(90deg, #5822d6, #4c22e4, #2f1be9);
+    color: #FFFFFF;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+   
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+    color: #00FFFF;
+}
+
+/* === Switch modo claro/oscuro === */
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.switch input {
+    display: none;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    display: flex;
+    justify-content: flex-end; /* o center si lo querés centrado */
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Estilo del slider */
+.slider {
+    width: 40px;
+    height: 22px;
+    left: 95%;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+/* Estilo opcional para el toggle dentro del slider */
+/* Aplicar box-sizing globalmente */
+* {
+  box-sizing: border-box;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* o center */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    overflow-x: hidden; /* evita que se desborde */
+}
+
+/* Estilo del slider */
+.slider {
+    width: 40px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    display: inline-block;
+    position: relative;
+    left: -12px;
+    max-width: 100%;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slider-container {
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    .slider {
+        width: 40px;
+        height: 22px;
+        right: auto;
+        left: auto;
+    }
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* === Botón y menú desplegable del filtro === */
+nav ul li.filter-dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.filter-button {
+    background-color: red;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 1000;
+}
+
+.filter-button:hover, .filter-button:active {
+    background-color: red;
+}
+
+.filter-button::after {
+    content: "▼";
+    margin-left: 0.5rem;
+    font-size: 0.8em;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #8e24aa;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1004;
+    border-radius: 5px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: red;
+}
+
+.show {
+    display: block;
+    background-color: #6d157f;
+}
+
+/* === Menú Hamburguesa === */
+.hamburger-menu {
+    display: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 0.5rem;
+}
+
+.hamburger-menu .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+   /* transform: translateY(-12px) rotate(-45deg);*/
+}
+
+/* === Contenedor para Switch y Filtro === */
+nav .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* === Media Queries para Responsividad === */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: fit-content;
+        max-width: 200px;
+        margin-top: 4rem;
+        background-color: #8e24aa;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-left: auto;
+        position: fixed;
+        top: 100%;
+        left: 0; /* Cambiamos left a 0 */
+        transform: translateX(0); /* Eliminamos la transformación */
+        z-index: 998;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        order: 1;
+        margin-left: auto;
+        z-index: 1003;
+        width: 40px;
+        height: 30px;
+        padding: 0.5rem;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        margin-right: auto;
+        order: 0;
+    }
+
+    nav .nav-controls {
+        align-items: center;
+        gap: 1rem;
+        margin-left: 0;
+        order: 2;
+        z-index: 1003;
+    }
+
+    .filter-dropdown {
+        margin-top: 0;
+        position: fixed; /* Cambiamos a fixed */
+        top: 100%; /* Lo posicionamos debajo de la barra de navegación */
+        left: 0; /* Lo alineamos a la izquierda */
+        z-index: 1005; /* Aseguramos que esté por encima de todo */
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .dropdown-content {
+        top: 0; /* El desplegable se abre desde arriba */
+        left: 0;
+        background-color: #6d157f;
+        transform: translateX(0);
+        bottom: auto;
+        z-index: 1004;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}

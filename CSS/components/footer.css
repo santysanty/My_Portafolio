@@ -1,0 +1,51 @@
+/* Estilos para el pie de página */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Aseguramos que el footer no sea más ancho que su contenedor */
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(90deg, #5822d6, #4c22e4, #2f1be9);
+    color: #FFFFFF; /* Degradado similar al nav */
+    opacity: 0.9;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box; /* Importante para que el padding no aumente el ancho total */
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 1rem; /* Reducimos el gap de los iconos sociales */
+}
+
+footer .social-icons i {
+    color: #FFFFFF;
+    font-size: 1.5rem; /* Reducimos el tamaño de los iconos sociales */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons i:hover {
+    transform: scale(1.2);
+    color: #00FFFF;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem; /* Reducimos el tamaño de la fuente del texto */
+    color: #FFFFFF;
+    text-align: left;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+#visit-counter {
+    font-size: 0.9rem; /* Reducimos el tamaño de la fuente del contador */
+}
+
+#countdown-container {
+    font-size: 0.9rem; /* Reducimos el tamaño de la fuente del contador de tiempo */
+}

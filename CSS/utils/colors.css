@@ -1,0 +1,32 @@
+/* === COLORES DE FONDO (UTILIDADES) === */
+.fuscia {
+    background-color: rgba(255, 0, 255, 0.3);
+}
+
+.azul-marino {
+    background-color: rgba(9, 9, 231, 0.3);
+}
+
+.celeste {
+    background-color: rgba(6, 148, 243, 0.3);
+}
+
+/* Variables de color */
+:root {
+    --morado-medio: #A06CD5;
+    --azul-medio: #5890FF;
+    --fucsia-brillante: #FF00FF;
+    --blanco: #FFFFFF;
+    --turquesa-claro: #00FFFF;
+    --negro: #000000;
+    --blanco-translucido-ligero: rgba(255, 255, 255, 0.4);
+    --sombra-interna-verde: rgba(179, 241, 6, 0.3);
+    --blanco-semitransparente: rgba(255, 255, 255, 0.85);
+    --texto-pelicula: #F0F0F0;
+    --hover-boton: #A000CC;
+
+    /* ... otras variables de color ... */
+    --altura-nav: 3rem; /* Ajusta el valor real */
+    --altura-footer: 3rem; /* Ajusta el valor real */
+    /* ... otros colores que uses ... */
+}
